@@ -205,6 +205,7 @@ void instruction() {
         match(TOK_LABEL); ident = tokenid; match(TOK_ID);
         lookup = register_lookup(label_lookup, &num_labels, (addr_lookup_t) { ident, next_instr });
         if (lookup->addr < 0) lookup->addr = next_instr;
+        else if (lookup->addr != next_instr) error("duplicate label");
         break;
     case TOK_GOTO:
         match(TOK_GOTO); ident = tokenid; match(TOK_ID);
