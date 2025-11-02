@@ -25,7 +25,7 @@ uint32_t next_instr = 0;
 int32_t lookahead;
 
 /*
-  Here's the grammar that we're working with here. Note that the lexer is case-insensitive.
+  Grammar for the textual assembly language. Note that all tokens are case-insensitive.
 
   program -> instruction program | epsilon
 

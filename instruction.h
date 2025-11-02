@@ -2,40 +2,6 @@
 #define INSTRUCTION_H
 #include <stdint.h>
 
-/*
-  Instruction set:
-
-  push VAL
-  rvalue ADDR
-  pop
-  :=   // use top as r-value, value beneath as ADDR l-value
-  copy
-  swap
-  // Within the textual assembly language, rather than addresses, we allow identifiers
-  // as memory locations, rather than actual addresses. This also necessitates an `lvalue'
-  // instruction within the assembly language. The assembler will assign addresses to
-  // each identifier, and translate `rvalue' instructions accordingly. `lvalue' commands
-  // get translated into equivalent `push' instructions with the address value.
-
-  // For arithmetic instructions, we assume that the top is the right side, value beneath as left side
-  +
-  -
-  /
-  *
-
-  // Note that `label' does not have a representation within the machine code; the assembler
-  // will translate any references to a LABEL (via `goto', `gofalse' etc.) into the appropriate
-  // address value
-  label LABEL
-  goto ADDR
-  gofalse ADDR
-  gotrue ADDR
-  halt
-
-  noop
-  print  // pops the top value
- */
-
 #define NOOP 0
 #define PUSH 1
 #define RVALUE 2
