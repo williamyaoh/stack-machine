@@ -29,8 +29,8 @@ Control flow operations:
 
 * **label** IDENT - target for jumps
 * **goto** IDENT - jump to the given label
-* **gofalse** IDENT - pop the top value of the stack, jump if non-zero
-* **gotrue** IDENT - pop the top value of the stack, jump if zero
+* **gofalse** IDENT - pop the top value of the stack, jump if zero
+* **gotrue** IDENT - pop the top value of the stack, jump if non-zero
 * **halt** - halt execution
 
 Miscellaneous operations:
